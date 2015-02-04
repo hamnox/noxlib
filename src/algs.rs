@@ -7,18 +7,10 @@ pub mod sorts{
     //    }
     // TODO: impl for all comparables 
     pub fn quicksort(array: &mut [i64]) {
-        print!("New array: ");
-        for item in array.iter() {
-            print!("{} ", item)
-        }
-        print!("\n");
         let length = array.len();
 
         if length < 2 { }
         else {
-            println!("swap {} and {}, from pos. {} and {}",
-                   array[(length - 1)/2], array[length-1],
-                   (length - 1)/2, length - 1);
             swap(array, (length - 1)/2, length - 1);
             let sort_char = length - 1;
 
@@ -26,27 +18,13 @@ pub mod sorts{
             // it to the place after the last swapped index.
             let mut store_index = 0us;
             for index in 0..(length - 1) {
-                for item in array.iter() {
-                    print!("{} ", item)
-                }
-                print!("now \n");
                 if array[index] < array[sort_char] {
-                    println!("swap {} and {}, from pos. {} and {}",
-                        array[index], array[store_index],
-                        index, store_index);
                     swap(array, index, store_index);
                     store_index += 1; 
                 }
             }
             // put the pivoted character right after the last swapped index
-            println!("swap {} and {}, from pos. {} and {}",
-                array[sort_char], array[store_index],
-                sort_char, store_index);
             swap(array, sort_char, store_index);
-            for item in array.iter() {
-                print!("{} ", item)
-            }
-            print!("now \n");
             if store_index > 1 {
                 quicksort(&mut array[0..(store_index - 1)]);
             }
