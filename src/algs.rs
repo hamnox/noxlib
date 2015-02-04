@@ -64,10 +64,6 @@ pub mod sorts{
 
 }
 
-fn in_out(array: &mut [i64]) -> &mut [i64]{
-    array
-}
-
 #[test]
 fn len_check() {
     let testarray = &mut [3i64, 3, 3, 2, 2, 0, 1, 45, -1];
@@ -92,6 +88,16 @@ fn multiplestest() {
     sorts::quicksort(testarray);
     assert_eq!(&mut [0i64, 0, 1, 2, 2,
                         2, 3, 4, 4, 5], testarray);
+}
+
+#[test]
+fn ohyeahwhatifidothis() {
+    let testarray = &mut [0i64, 1, 2, 3, 4,
+                             5, 6, 7, 8, 9];
+    sorts::quicksort(testarray);
+    assert_eq!(&mut [0i64, 1, 2, 3, 4,
+                        5, 6, 7, 8, 9], testarray);
+
 }
 // fn blanktest() {
 //     let testarray = [3,5,2,7];
