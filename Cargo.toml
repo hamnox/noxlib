@@ -1,0 +1,5 @@
+[package]
+
+name = "noxlib"
+version = "0.0.1"
+authors = ["Melanie Heisey <mheisey.nox@gmail.com>"]
