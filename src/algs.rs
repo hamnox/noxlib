@@ -5,7 +5,7 @@ pub mod sorts{
     //        //for now only accepting numbers
     //        num::cast(
     //    }
-
+    // TODO: impl for all comparables 
     pub fn quicksort(array: &mut [i64]) {
         print!("New array: ");
         for item in array.iter() {
